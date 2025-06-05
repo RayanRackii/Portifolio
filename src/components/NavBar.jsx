@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -30,13 +31,14 @@ export const NavBar = () => {
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
+      {/* NAV */}
       <div className="container flex items-center justify-between">
         <a
           className="text-xl font-bold text-primary flex items-center"
           href="#hero"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground"> omg </span> sexo
+            <span className="text-glow text-foreground"> Rayan </span> Portifolio
           </span>
         </a>
 
@@ -52,19 +54,25 @@ export const NavBar = () => {
           ))}
         </div>
 
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-foreground z-50" aria-label={isMenuOpen ? "Close menu" : "Open menu"}>
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* MOBILE NAV */}
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
-            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0"
+            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="hidden md:flex space-x-8">
+          <div className="flex flex-col space-y-8 text-xl">
             {navItems.map((item, key) => (
               <a
                 href={item.href}
                 key={key}
                 className="text-foreground hover:text-primary transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </a>
