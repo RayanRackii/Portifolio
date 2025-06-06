@@ -1,14 +1,37 @@
 const projects = [
-    {
-        id: 1,
-        title: "Project One",
-    }
-] 
+  {
+    id: 1,
+    title: "Project One",
+    description: "Descrição um",
+    image: "projects/project1.png",
+    tags: ["React", "TailwindCSS"],
+    githubUrl: "#",
+  },
+];
 
 export const Projects = () => {
-    return (
-        <section id="projects" className="container py-20">
+  return (
+    <section id="projects" className="py-24 px-4 relative">
+      <div className="container mx-auto max-w-5xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          Featured <span className="text-primary"> Projects </span>
+        </h2>
 
-        </section>
-    )
-}
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos id,
+          libero distinctio, assumenda necessitatibus neque, natus nesciunt
+          quaerat nihil inventore adipisci voluptatibus perferendis laudantium
+          iusto suscipit animi eum quidem totam.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, key) => (
+                <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
+                    <p> {project.tags} </p>
+                </div>
+            ))}
+        </div>
+      </div>
+    </section>
+  );
+};

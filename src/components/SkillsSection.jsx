@@ -21,7 +21,7 @@ export const SkillsSection = () => {
 );
 
   return (
-    <section id="skills" className="py-24 px-4 bg-secondary/30">
+    <section id="skills" className="py-24 px-4 bg-secondary">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
           My <span className="text-primary"> Skills </span>
@@ -35,7 +35,7 @@ export const SkillsSection = () => {
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-muted-foreground hover:bg-secondary hover:text-white"
+                  : "bg-secondary text-muted-foreground hover:bg-secondary hover:text-white"
               )
               }
               onClick={() => setActiveCategory(category)}
@@ -49,7 +49,7 @@ export const SkillsSection = () => {
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              className="bg-card p-6 rounded-lg shadow-xs card-hover z-10"
             >
               <div className="text-left mb-4">
                 <h3 className="text-xl font-semibold">{skill.name}</h3>
