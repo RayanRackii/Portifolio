@@ -1,3 +1,5 @@
+import { ExternalLink, Github } from "lucide-react";
+
 const projects = [
   {
     id: 1,
@@ -28,8 +30,31 @@ export const ProjectsSection = () => {
             {projects.map((project, key) => (
                 <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
                     <div className="h-48 overflow-hidden">
-                      <img src={project.image} alt={project.title}/>
+                      <img src={project.image} alt={project.title} className="w-full h-full object-cover transiotion-transform duration-500 group-hover:scale"/>
                     </div>
+                    <div className="p-6">
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tags.map((tag, index) => (
+                          <span key={index} className="px-2 py-1 text-xs font-semibold bg-primary/20 text-secondary-foreground rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                    <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
+                    <p className="text-muted-foreground text-sm mb-4"> {project.description} </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex space-x-3">
+                        <a className="text-foreground/80 hover:text-primary transition-colors" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink size={20}/>
+                        </a>
+
+                        <a>
+                          <Github size={20}/>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             ))}
         </div>
