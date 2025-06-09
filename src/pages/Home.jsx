@@ -4,9 +4,9 @@ import { StarBackground } from "../components/StarBackground";
 import { NavBar } from "../components/NavBar";
 import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
-import { SkillsSection } from "../components/skillsSection";
-import { Projects } from "../components/Projects";
+import { ProjectsSection } from "../components/ProjectsSection";
 import { useState } from "react";
+import { SkillsSection } from "../components/SkillsSection";
 
 export const Home = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -26,7 +26,7 @@ export const Home = () => {
 
         <SkillsSection />
 
-        <Projects />
+        <ProjectsSection />
       </main>
     </div>
   );

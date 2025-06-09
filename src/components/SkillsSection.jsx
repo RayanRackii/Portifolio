@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { cn } from "../lib/utils";
+import {
+  FileQuestionIcon,
+  LucideMessageCircleQuestion,
+  MessageCircleQuestion,
+  MessageCircleQuestionIcon,
+  ShieldQuestionIcon,
+} from "lucide-react";
 
 const skills = [
   { name: "JavaScript", level: "95", category: "front-end" },
@@ -16,15 +23,18 @@ const categories = ["all", "front-end", "tools", "back-end", "database"];
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const filteredSkills = skills.filter((skill) =>
-    activeCategory === "all" || skill.category === activeCategory
-);
+  const filteredSkills = skills.filter(
+    (skill) => activeCategory === "all" || skill.category === activeCategory
+  );
 
   return (
     <section id="skills" className="py-24 px-4 bg-secondary">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
-          My <span className="text-primary"> Skills </span>
+        <h2 className="text-3xl md:text-5xl font-bold mb-12 flex items-center justify-between">
+          <span className="flex-1 text-center">
+            My <span className="text-primary"> Skills </span>
+          </span>
+          <MessageCircleQuestionIcon className="text-3xl md:text-5xl ml-4" />
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -36,8 +46,7 @@ export const SkillsSection = () => {
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-muted-foreground hover:bg-secondary hover:text-white"
-              )
-              }
+              )}
               onClick={() => setActiveCategory(category)}
             >
               {category}
