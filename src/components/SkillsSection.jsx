@@ -9,17 +9,23 @@ import {
 } from "lucide-react";
 
 const skills = [
-  { name: "JavaScript", level: "95", category: "front-end" },
-  { name: "React", level: "80", category: "front-end" },
-  { name: "Node.js", level: "10", category: "back-end" },
-  { name: "Python", level: "25", category: "back-end" },
-  { name: "CSS", level: "95", category: "front-end" },
-  { name: "HTML", level: "95", category: "front-end" },
-  { name: "TypeScript", level: "95", category: "front-end" },
-  { name: "MongoDB", level: "95", category: "database" },
+  { name: "JavaScript", level: "50", category: "front-end" },
+  { name: "React", level: "40", category: "front-end" },
+  { name: "Python", level: "75", category: "back-end" },
+  { name: "Excel", level: "75", category: "Tools" },
+  { name: "PowerBI", level: "50", category: "Tools" },
+  { name: "CSS", level: "70", category: "front-end" },
+  { name: "HTML", level: "70", category: "front-end" },
+  { name: "Java", level: "35", category: "back-end" },
+  { name: "MySQL", level: "55", category: "database" },
+  { name: "PostgreSQL", level: "45", category: "database" },
+  { name: "VS Code", level: "85", category: "Tools" },
+  { name: "GitHub", level: "50", category: "Tools" },
+  { name: "Docker", level: "25", category: "Tools" },
+
 ];
 
-const categories = ["all", "front-end", "tools", "back-end", "database"];
+const categories = ["all", "front-end", "Tools", "back-end", "database"];
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 

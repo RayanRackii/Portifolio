@@ -7,9 +7,11 @@ import { AboutSection } from "../components/AboutSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { useState } from "react";
 import { SkillsSection } from "../components/SkillsSection";
+import { ContactSection } from "../components/ContactSection";
+import { Footer } from "../components/Footer";
 
 export const Home = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
@@ -27,7 +29,11 @@ export const Home = () => {
         <SkillsSection />
 
         <ProjectsSection />
+
+        <ContactSection />
       </main>
+
+      <Footer />
     </div>
   );
 };

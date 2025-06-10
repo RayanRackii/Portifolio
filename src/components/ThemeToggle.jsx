@@ -13,7 +13,10 @@ export const ThemeToggle = ({ isDarkMode, setIsDarkMode }) => {
     }
   }, [isDarkMode]);
 
-  const toggleTheme = () => setIsDarkMode((prev) => !prev);
+  const toggleTheme = () => {
+    setIsDarkMode((prev) => !prev);
+    // Remova o localStorage daqui!
+  };
 
   return (
     <button
