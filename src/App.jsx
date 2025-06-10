@@ -1,6 +1,7 @@
 import { Home } from "./pages/home"
 import { NotFound } from "./pages/NotFound"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import '../i18n';
 
 
 function App() {

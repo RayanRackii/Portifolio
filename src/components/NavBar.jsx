@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
+import { LanguageToggle } from "./LanguageToggle";
 
 const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "nav.home", href: "#hero" },
+  { name: "nav.about", href: "#about" },
+  { name: "nav.skills", href: "#skills" },
+  { name: "nav.projects", href: "#projects" },
+  { name: "nav.contact", href: "#contact" },
 ];
 
 export const NavBar = () => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,32 +34,39 @@ export const NavBar = () => {
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
-      {/* NAV */}
       <div className="container flex items-center justify-between">
         <a
           className="text-xl font-bold text-primary flex items-center"
           href="#hero"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground"> Rayan </span> Portifolio
+            <span className="text-glow text-foreground"> Rayan </span> Portfolio
           </span>
         </a>
 
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item, key) => (
             <a
               href={item.href}
               key={key}
               className="text-foreground hover:text-primary transition-colors duration-300"
             >
-              {item.name}
+              {t(item.name)}
             </a>
           ))}
+          <LanguageToggle />
         </div>
 
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-foreground z-50" aria-label={isMenuOpen ? "Close menu" : "Open menu"}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center space-x-4 md:hidden">
+          <LanguageToggle />
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            className="p-2 text-foreground z-50" 
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* MOBILE NAV */}
         <div
@@ -74,7 +84,7 @@ export const NavBar = () => {
                 className="text-foreground hover:text-primary transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {item.name}
+                {t(item.name)}
               </a>
             ))}
           </div>
