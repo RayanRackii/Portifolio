@@ -7,7 +7,7 @@ import {
   MessageCircleQuestionIcon,
   ShieldQuestionIcon,
 } from "lucide-react";
-
+import { useTranslation } from "react-i18next";
 const skills = [
   { name: "JavaScript", level: "50", category: "front-end" },
   { name: "React", level: "40", category: "front-end" },
@@ -22,11 +22,12 @@ const skills = [
   { name: "VS Code", level: "85", category: "Tools" },
   { name: "GitHub", level: "50", category: "Tools" },
   { name: "Docker", level: "25", category: "Tools" },
-
 ];
 
 const categories = ["all", "front-end", "Tools", "back-end", "database"];
 export const SkillsSection = () => {
+  const { t } = useTranslation();
+
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredSkills = skills.filter(
@@ -38,9 +39,16 @@ export const SkillsSection = () => {
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-5xl font-bold mb-12 flex items-center justify-between">
           <span className="flex-1 text-center">
-            My <span className="text-primary"> Skills </span>
+            {t("skills.Title")}{" "}
+            <span className="text-primary"> {t("skills.titleHighlight")} </span>
           </span>
-          <MessageCircleQuestionIcon className="text-3xl md:text-5xl ml-4" />
+          <div className="relative group">
+            <MessageCircleQuestionIcon className="text-3xl md:text-5xl ml-4 cursor-pointer" />
+            <span
+              className="absolute left-1/2 -translate-x-1/2 sm:left-auto sm:right-0 sm:translate-x-0 top-full mt-2 w-64 sm:w-80 md:w-96 py-2 sm:py-3 px-3 sm:px-5 rounded bg-primary text-foreground text-xs sm:text-sm shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 whitespace-pre-line z-50 font-semibold text-left max-w-[90vw]"
+              dangerouslySetInnerHTML={{ __html: t("skills.tooltip") }}
+            />
+          </div>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
