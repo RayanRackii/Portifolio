@@ -12,15 +12,14 @@ export default defineConfig({
     }
   },
   build: {
+    target: 'es2015',
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        format: 'es'
       }
     },
+    minify: 'terser',
     assetsInlineLimit: 0,
-    cssCodeSplit: false,
-  },
-  esbuild: {
-    legalComments: 'none',
   }
 })
