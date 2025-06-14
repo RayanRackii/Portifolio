@@ -1,29 +1,29 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
-
-const projects = [
-  {
-    id: 1,
-    title: "Project One",
-    description: "Descrição um",
-    image: "projects/project1.png",
-    tags: ["React", "TailwindCSS"],
-    githubUrl: "#",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const ProjectsSection = () => {
+  const { t } = useTranslation();
+  
+  const projects = [
+  {
+      id: 1,
+      title: t("project.project1.title"),
+      description: t("project.project1.description"),
+      image: "projects/project1.png",
+      tags: ["SQL Server", "PowerBI", "Excel", "Python"],
+      githubUrl: "https://github.com/RayanRackii/dataSocial/",
+    },
+    
+  ];
   return (
     <section id="projects" className="py-24 px-4 relative">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-6xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Featured <span className="text-primary"> Projects </span>
+          {t("project.title")} <span className="text-primary"> {t("project.titleHighlight")} </span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos id,
-          libero distinctio, assumenda necessitatibus neque, natus nesciunt
-          quaerat nihil inventore adipisci voluptatibus perferendis laudantium
-          iusto suscipit animi eum quidem totam.
+          {t("project.subtitle")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -53,7 +53,7 @@ export const ProjectsSection = () => {
 
                 <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">
-                  {" "}
+                  {" "} <br/>
                   {project.description}{" "}
                 </p>
                 <div className="flex items-center justify-between">
@@ -67,7 +67,12 @@ export const ProjectsSection = () => {
                       <ExternalLink size={20} />
                     </a>
 
-                    <a>
+                    <a
+                      className="text-foreground/80 hover:text-primary transition-colors"
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Github size={20} />
                     </a>
                   </div>
@@ -83,7 +88,7 @@ export const ProjectsSection = () => {
             href="https://www.github.com/RayanRackii"
             target="_blank"
           >
-            Check my GitHub! <ArrowRight size={16} />
+            {t("project.git")} <ArrowRight size={16} />
           </a>
         </div>
       </div>

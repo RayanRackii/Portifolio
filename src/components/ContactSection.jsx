@@ -1,20 +1,21 @@
 import { Github, Linkedin, Mail, MapPin, Phone, Pin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const ContactSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get in <span className="text-primary">Touch</span>
+          {t("contact.title")} <span className="text-primary">{t("contact.titleHighlight")}</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          If you have any questions, want to collaborate, or just want to say
-          hello, feel free to reach out! I'm always open to new opportunities
-          and discussions.
+          {t("contact.text")}
         </p>
 
-        <h3 className="text-2xl font-semibold"> Contact Information </h3>
+        <h3 className="text-2xl font-semibold"> {t("contact.subTitle")} </h3>
         <br />
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 justify-center">
@@ -68,7 +69,7 @@ export const ContactSection = () => {
             <div className="p-3 rounded-full bg-primary/10">
               <Phone className="h-6 w-6 text-primary" />
             </div>
-            <h4 className="font-medium">Phone</h4>
+            <h4 className="font-medium">{t("contact.phone")}</h4>
             <a
               href="tel:+5545991253771"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -82,7 +83,7 @@ export const ContactSection = () => {
             <div className="p-3 rounded-full bg-primary/10">
               <MapPin className="h-6 w-6 text-primary" />
             </div>
-            <h4 className="font-medium">Location</h4>
+            <h4 className="font-medium">{t("contact.location")}</h4>
             <span className="text-muted-foreground">Brazil</span>
           </div>
         </div>

@@ -11,17 +11,18 @@ import { useTranslation } from "react-i18next";
 const skills = [
   { name: "JavaScript", level: "50", category: "front-end" },
   { name: "React", level: "40", category: "front-end" },
-  { name: "Python", level: "75", category: "back-end" },
+  { name: "Python", level: "65", category: "back-end" },
   { name: "Excel", level: "75", category: "Tools" },
   { name: "PowerBI", level: "50", category: "Tools" },
   { name: "CSS", level: "70", category: "front-end" },
-  { name: "HTML", level: "70", category: "front-end" },
+  { name: "HTML", level: "80", category: "front-end" },
   { name: "Java", level: "35", category: "back-end" },
   { name: "MySQL", level: "55", category: "database" },
   { name: "PostgreSQL", level: "45", category: "database" },
-  { name: "VS Code", level: "85", category: "Tools" },
+  { name: "VS Code", level: "75", category: "Tools" },
   { name: "GitHub", level: "50", category: "Tools" },
   { name: "Docker", level: "25", category: "Tools" },
+  { name: "SQL Server", level: "60", category: "database" },
 ];
 
 const categories = ["all", "front-end", "Tools", "back-end", "database"];

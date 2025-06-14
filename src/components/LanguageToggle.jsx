@@ -24,6 +24,7 @@ export const LanguageToggle = () => {
   const handleLanguageChange = (langCode) => {
     i18n.changeLanguage(langCode);
     setIsOpen(false);
+    localStorage.setItem('language', langCode);
   };
 
   const getFlagUrl = (countryCode) => {
