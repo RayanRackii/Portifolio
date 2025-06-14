@@ -1,4 +1,4 @@
-import { Home } from "./pages/home.jsx" // ✅ Named import (com chaves)
+import { Home } from "./pages/Home.jsx" // ✅ Named import (com chaves)
 import { NotFound } from "./pages/NotFound"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import '../i18n';
