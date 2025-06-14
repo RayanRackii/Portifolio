@@ -1,15 +1,14 @@
-import { Home } from "./pages/Home.jsx" // ✅ Named import (com chaves)
+import { Home } from "./pages/Home.jsx"
 import { NotFound } from "./pages/NotFound"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import '../i18n';
 
-
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Portifolio">
         <Routes>
-          <Route path="/Portifolio" index element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

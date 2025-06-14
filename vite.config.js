@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), 
     tailwindcss()
   ],
-  base: '/Portifolio',
+  base: '/Portifolio/', // Adicione a barra final
   resolve: { 
     alias: {
       '@': path.resolve(__dirname, './src'),
