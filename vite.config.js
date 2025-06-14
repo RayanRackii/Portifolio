@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite' 
 import path from 'path'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), 
     tailwindcss()
@@ -24,7 +23,7 @@ export default defineConfig({
   },
   server: {
     headers: {
-      'Content-Security-Policy': "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; img-src * data: blob:; connect-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; font-src *; media-src *; object-src *; child-src *; frame-src *;"
+      'Content-Security-Policy': "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; img-src * data: blob:; connect-src * https://www.google-analytics.com; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; font-src *; media-src *; object-src *; child-src *; frame-src *;"
     }
   }
 })
