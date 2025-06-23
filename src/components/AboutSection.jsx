@@ -37,8 +37,8 @@ export const AboutSection = () => {
                   e.preventDefault();
                   const lang = i18n.language || "en";
                   const file = lang.startsWith("en")
-                    ? `https://rayanrackii.github.io/resumes/Resume - Rayan K. R. Abu Ali.pdf`
-                    : `https://rayanrackii.github.io/resumes/Curriculo - Rayan K. R. Abu Ali.pdf`;
+                    ? `https://rayanrackii.github.io/Portifolio/resumes/Resume - Rayan K. R. Abu Ali.pdf`
+                    : `https://rayanrackii.github.io/Portifolio/resumes/Curriculo - Rayan K. R. Abu Ali.pdf`;
                   window.open(file, "_blank");
                 }}
               >
